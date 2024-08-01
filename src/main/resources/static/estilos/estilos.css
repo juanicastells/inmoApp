@@ -1,0 +1,175 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 5px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.container-login{
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+header{
+    display: flex;
+    justify-content:space-around;
+}
+
+.header-login{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header img{
+    width: 25%; /*Reduce el ancho al 50%*/ 
+    height: auto; /*Mantiene la proporción de la imagen*/
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input-group-addon {
+    padding: 8px;
+    background-color: #e9e9e9;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="mail"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="mail"],
+input[type="password"]{
+    width: 300px;
+}
+
+input[type="number"]{
+    width: 120px;
+}
+
+input[type="date"]{
+    width: 150px;
+}
+
+select{
+    width: 210px;
+}
+
+.input-group input[type="number"] {
+    border-radius: 0 4px 4px 0;
+}
+
+textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+p{
+    font-size: 14px;
+}
+
+a{
+    text-decoration: none;
+    color: cornflowerblue;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+a:hover{
+    font-weight: bold;
+}
+
+.options{
+    text-align: right;
+}
+
+.firma{
+    text-align: right;
+}
+
+@media print {
+    .no-imprimible {
+        display: none !important;
+    }
+}
+
+ul{
+    list-style-type: none;
+}
+
+.enlaces-dashboard{
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 24px;
+}
+
+#contacto-soporte{
+    margin-top: 100px;
+    margin-right: 100px;
+    text-align: right;
+}
+
+#contacto-soporte a {
+    color:cornflowerblue;
+}

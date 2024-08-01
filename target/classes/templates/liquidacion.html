@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo Generado</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <p id="datosInmobiliaria"><b>TU INMOBILIARIA</b> <br><br>
+                Martillero y Corredor Inmobiliairio <br>
+                Fº 9999 Tº VII- Depto. Jud. De Mercedes <br>
+                info@tuinmobiliaria.com.ar <br>
+                Dirección TU INMOBILIARIA <br>
+                T.E. 02474-999999 Salto 2741 (Bs. As)
+            </p>
+            <img src="img/tu-inmo-logo.png" alt="">
+        </header>
+        
+        <hr>
+
+        <h3>Liquidación</h3>
+        <div>
+            <p><strong>Liquidación a favor de:</strong> <span th:text="${liquidacion.nombrePropietario}"></span></p>
+            <p><strong>Por Cobranza de alquileres realizada en:</strong> <span th:text="${porCobranza}"></span></p>
+            <p><strong>percibido de:</strong> <span th:text="${liquidacion.nombreInquilino}"></span></p>
+            <p><strong>Monto Percibido:</strong> <span th:text="${liquidacion.montoPercibido}"></span></p>
+            <p><strong>otros conceptos:</strong> <span th:text="${liquidacion.otrosConceptos}"></span></p>
+            <p><strong>Detalle Otros Conceptos:</strong> <span th:text="${liquidacion.detalleOtrosConceptos}"></span></p>
+            <p><strong>Gastos Inquilino:</strong> <span th:text="${liquidacion.gastosInquilino}"></span></p>
+            <p><strong>Detalle Gastos Inquilino:</strong> <span th:text="${liquidacion.detalleGastosInquilino}"></span></p>
+            <p><strong>Total Percibido:</strong> <span th:text="${totalPercibido}"></span></p>
+            <hr>
+            <p><strong>A Deducir:</strong> <span th:text="${liquidacion.honorarios}"></span> % por honorarios gestión cobranzas administración. Ley alquileres 10973 y Honorarios contratos</p>
+            <p><strong>A Deducir:</strong> $ <span th:text="${aDeducir}"></span> </p>
+            <p><strong>Saldo a Favor:</strong> $ <span th:text="${saldo}"></span></p>
+            <p><span th:text="${comentarios}"></span></p><br><br>
+            <p class="firma">_____________________________</p>
+            <p class="firma">Firma del Propietario Locador</p>
+        </div>
+        <hr>
+        <div class="options">
+            <button onclick="imprimirPagina()" class="no-imprimible">Imprimir</button>
+            <a href="formLiquidacion" class="no-imprimible">Volver</a>
+            <a href="dashboard" class="no-imprimible">Inicio</a>
+        </div>
+    </div>
+    <script>
+        function imprimirPagina() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

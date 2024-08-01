@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Formulario de Liquidación</h2>
+        <form th:action="@{/generarLiquidacion}" th:object="${liquidacion}" method="post">
+            <div class="form-group">
+                <label for="nombrePropietario">Nombre del Propietario:</label>
+                <input type="text" id="nombrePropietario" th:field="*{nombrePropietario}" required /><br/>
+            </div>
+    
+            <div class="form-group">
+                <label for="nombreInquilino">Nombre del Inquilino:</label>
+                <input type="text" id="nombreInquilino" th:field="*{nombreInquilino}" required/><br/>
+            </div>
+    
+            <div class="form-group">
+                <label for="porCobranza">por cobranza de alquileres realizadas en:</label>
+                <input type="text" id="porCobranza" name="porCobranza" th:value="${porCobranza}" required/><br>
+            </div>
+    
+            <div class="form-group">
+                <label for="montoPercibido">Monto Percibido:</label>
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input type="number" id="montoPercibido" th:field="*{montoPercibido}" min="0" step="0.01" required>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="otrosConceptos">Otros Conceptos:</label>
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input type="number" id="otrosConceptos" th:field="*{otrosConceptos}" min="0" step="0.01">
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="detalleOtrosConceptos">Detalle Otros Conceptos:</label>
+                <textarea id="detalleOtrosConceptos" th:field="*{detalleOtrosConceptos}" rows="4"></textarea>
+            </div>
+    
+            <div class="form-group">
+                <label for="gastosInquilino">Gastos Inquilino:</label>
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input type="number" id="gastosInquilino" th:field="*{gastosInquilino}" min="0" step="0.01">
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="detalleGastosInquilino">Detalle Gastos Inquilino:</label>
+                <textarea id="detalleGastosInquilino" th:field="*{detalleGastosInquilino}" rows="4"></textarea>
+            </div>
+    
+            <div class="form-group">
+                <label for="honorarios">Honorarios:</label>
+                <div class="input-group">
+                    <span class="input-group-addon">%</span>
+                    <input type="number" id="porcentaje-honorarios" th:field="*{honorarios}" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="comentarios">Comentarios:</label>
+                <textarea id="comentarios" name="comentariosDefault" th:field="*{comentariosDefault}" rows="4"></textarea>
+            </div>
+    
+            <button type="submit">Generar Liquidación</button>
+            <button type="reset">Borrar</button>
+            <a href="/dashboard">Inicio</a>
+        </form>
+    </div>
+        
+</body>
+</html>

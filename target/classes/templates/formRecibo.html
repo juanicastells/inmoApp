@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo de Alquiler</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Formulario Recibo de Alquiler</h2>
+        <form th:action="@{/generarRecibo}" th:object="${recibo}" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre del Inquilino:</label>
+                <input type="text" id="nombre" th:field="*{nombre}" required>
+            </div>
+            <div class="form-group">
+                <label for="direccion">Dirección del Inmueble:</label>
+                <input type="text" id="direccion" th:field="*{direccion}" required>
+            </div>
+            <div class="form-group">
+                <label for="monto">Monto del Alquiler:</label>
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input type="number" id="monto" th:field="*{monto}" min="0" step="0.01" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="otrosConceptos">Otros Conceptos:</label>
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input type="number" id="monto" th:field="*{otrosConceptos}" min="0" step="0.01">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha de Pago:</label>
+                <input type="date" id="fecha" th:field="*{fecha}" required>
+            </div>
+            <div class="form-group">
+                <label for="forma_pago">Forma de Pago:</label>
+                <select id="forma_pago" th:field="*{formaPago}" required>
+                    <option value="efectivo">Efectivo</option>
+                    <option value="transferencia">Transferencia bancaria</option>
+                    <option value="cheque">Cheque</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comentarios">En concepto de:</label>
+                <textarea id="comentarios" th:field="*{comentarios}" rows="4"></textarea>
+            </div>
+            <button type="submit">Generar Recibo</button>
+            <button type="reset">Borrar</button>
+            <a href="/dashboard">Inicio</a>
+        </form>
+    </div>
+</body>
+</html>

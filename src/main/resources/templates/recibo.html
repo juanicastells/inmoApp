@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo Generado</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <p id="datosInmobiliaria"><b>TU INMOBILIARIA</b> <br><br>
+                Martillero y Corredor Inmobiliairio <br>
+                Fº 3252 Tº VII- Depto. Jud. De Mercedes <br>
+                info@tuinmobiliaria.com.ar <br>
+                Dirección tu Inmobiliairia <br>
+                T.E. 02474-999999 Salto 2741 (Bs. As)
+            </p>
+            <img src="img/tu-inmo-logo2-recortada.png" alt="">
+        </header>
+        
+        <hr>
+
+        <h3>Recibo de Alquiler</h3>
+        <div>
+            <p><strong>Dirección del Inmueble:</strong> <span th:text="${recibo.direccion}"></span></p>
+            <p><strong>Fecha de Pago:</strong> <span th:text="${recibo.fecha}"></span></p>
+            <p><strong>Forma de Pago:</strong> <span th:text="${recibo.formaPago}"></span></p>
+            <p><strong>Recibe de:</strong> <span th:text="${recibo.nombre}"></span></p>
+            <p><strong>En concpeto de:</strong> <span th:text="${recibo.comentarios}"></span></p>
+            <p><strong>Importe del Alquiler:</strong> $ <span th:text="${recibo.monto}"></span></p>
+            <p><strong>Otros Conceptos:</strong> $ <span th:text="${recibo.otrosConceptos}"></span></p>
+            <p><strong>Importe Total:</strong> $ <span th:text="${montoTotal}"></span></p>
+        </div>
+        <hr>
+        <div class="options">
+            <button onclick="imprimirPagina()" class="no-imprimible">Imprimir</button>
+            <a href="/" class="no-imprimible">Volver</a>
+            <a href="dashboard" class="no-imprimible">Inicio</a>
+        </div>
+    </div>
+    <script>
+        function imprimirPagina() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

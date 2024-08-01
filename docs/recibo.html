@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo Generado</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <p id="datosInmobiliaria"><b>IVANA ANDREA MARONI INMOBILIARIA</b> <br><br>
+                Martillero y Corredor Inmobiliairio <br>
+                Fº 3252 Tº VII- Depto. Jud. De Mercedes <br>
+                maroniinmobiliaria@hotmail.com <br>
+                Buenos Aires 1043 <br>
+                T.E. 02474-423796 Salto 2741 (Bs. As)
+            </p>
+            <img src="img/logo.png" alt="">
+        </header>
+        
+        <hr>
+
+        <h2>Recibo de Alquiler</h2>
+        <div>
+            <p><strong>Dirección del Inmueble:</strong> <span th:text="${recibo.direccion}"></span></p>
+            <p><strong>Fecha de Pago:</strong> <span th:text="${recibo.fecha}"></span></p>
+            <p><strong>Forma de Pago:</strong> <span th:text="${recibo.formaPago}"></span></p>
+            <p><strong>Recibe de:</strong> <span th:text="${recibo.nombre}"></span></p>
+            <p><strong>En concpeto de:</strong> <span th:text="${recibo.comentarios}"></span></p>
+            <p><strong>Monto del Alquiler:</strong> $<span th:text="${recibo.monto}"></span></p>
+            <p><strong>Otros Conceptos:</strong> $<span th:text="${recibo.otrosConceptos}"></span></p>
+            <p><strong>Monto Total:</strong> $<span th:text="${montoTotal}"></span></p>
+        </div>
+    </div>
+</body>
+</html>

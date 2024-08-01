@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InmoApp - Login</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+    <header class="header-login">
+        <h1>InmoApp</h1>
+        <p>Sistema de Gestión Inmobiliaria</p>
+    </header>
+    <div class="container-login">
+        <h2>Login</h2>
+        <form th:action="@{/}" method="post">
+            <div class="form-group">
+                <label for="username" class="label-login">Usuario:</label>
+                <input type="mail" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password" class="label-login">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="options">
+                <button type="submit">Iniciar Sesión</button>
+            </div>
+        </form>
+    </div>
+    <div id="contacto-soporte">
+        <h3>Soporte</h3>
+        <a href="mailto:soporte@inmoapp.com.ar">soporte@inmoapp.com.ar</a>
+        <a href="https://web.whatsapp.com/send?phone=542474681584" target="_blank">+54 2474 681584</a>
+    </div>    
+</body>
+</html>
