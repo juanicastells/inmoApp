@@ -43,8 +43,8 @@ public class SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-        manager.createUser(User.withUsername("juan-c65@live.com.ar")
-            .password("{noop}1584")
+        manager.createUser(User.withUsername("maroniinmobiliaria@hotmail.com")
+            .password("{noop}2999")
             .roles("USER")
             .build());
         return manager;
